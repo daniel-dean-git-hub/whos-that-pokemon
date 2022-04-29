@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Nameplate from './features/nameplate/Nameplate';
 import Pokemon from './features/pokemon/Pokemon';
 import GameControls from './features/gameControls/GameControls';
-import './App.css';
+import './App.scss';
 
 
 function App() {

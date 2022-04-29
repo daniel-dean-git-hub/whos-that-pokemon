@@ -2,6 +2,21 @@ img {
     width: auto;
 }
 
+.loading {
+    max-width: 475px;
+    max-height: 475px;
+    animation: loading-rotate infinite 2s;
+}
+
 .hidden {
     filter: hue-rotate(90deg) brightness(0%) grayscale(10%);
+}
+
+@keyframes loading-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

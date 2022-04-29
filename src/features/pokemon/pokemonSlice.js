@@ -11,7 +11,6 @@ const initialState = {
 export const getPokemon = createAsyncThunk(
     'pokemon/getPokemon',
     async (id = 0) => {
-        console.log('a')
         const response = await fetchPokemonDetails(id) 
         return response
     }

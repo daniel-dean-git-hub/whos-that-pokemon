@@ -13,8 +13,8 @@ const GameControls = () => {
         <div className="controls">
             <Searchbar />
             <div>
-                <button onClick={revealPokemon} >Give up</button>
-                <button onClick={newPokemon} >New Game</button>
+                <button onClick={revealPokemon} >Give Up</button>
+                <button onClick={newPokemon} >New Pokemon</button>
             </div>
         </div>
     )

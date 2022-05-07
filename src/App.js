@@ -20,14 +20,11 @@ function App() {
           border: '2vw solid rgb(58 172 190)',
           margin: 'auto',
           maxWidth: 1200,
-          padding: '1rem',
-          borderRadius: '5rem',
-          // boxShadow: '0px 0px 25px 25px rgb(58 172 190), inset 0px 0px 25px 25px rgb(58 172 190)',
+          padding: '3rem',
+          borderRadius: '50%',
         }}>
           <PokemonContainer toggleDisplay={toggleDisplay}/>
         </div>
-
-        
         <GameControls />
     </div>
   );

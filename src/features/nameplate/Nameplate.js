@@ -8,7 +8,7 @@ const Nameplate = () => {
     const { name } = useSelector(selectPokemon)
 
     return (
-        <h1>{ revealName && name ? name : '? ? ?'}</h1>
+        <h1 style={{fontSize: '6rem'}}>{ revealName && name ? name : '? ? ?'}</h1>
     )
 }
 

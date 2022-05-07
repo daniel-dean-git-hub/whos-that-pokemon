@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Pokemon Solid', sans-serif;
-  font-size: 80px;
+  font-size: 16px;
   color: #ffcb05;
   text-shadow:  3px 3px 0 #193367,
                 -1px -1px 0 #193367,  
@@ -22,8 +22,10 @@
 
 .App {
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 2rem;
 }
 
 .App-logo {

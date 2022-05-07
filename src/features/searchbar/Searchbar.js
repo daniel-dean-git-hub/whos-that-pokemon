@@ -13,7 +13,7 @@ const Searchbar = () => {
     const checkGuess = (e) => dispatch(updateGuess(e.target.value))
 
     useEffect(() => {
-        if (userGuess === name) {
+        if (userGuess.toLowerCase() === name.toLowerCase()) {
             dispatch(correctGuess())
         }
     }, [userGuess, dispatch, name])
@@ -28,7 +28,7 @@ const Searchbar = () => {
             borderRadius: `1rem`,
             textAlign: 'center',
             width: '60vw',
-            fontSize: '.5rem',
+            fontSize: '2rem',
             padding: '0px 50px'
         }}
         placeholder={'Type guess here...'}

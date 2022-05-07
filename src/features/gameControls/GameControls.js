@@ -15,22 +15,36 @@ const GameControls = () => {
     const displayMessage = () => {
         if (guessCorrect) { 
             return ( <>
-                <p>Congratulations! Current Score {score}</p> 
+                <p css={textStyle}>Congratulations! Current Score {score}</p> 
             </>
             )
         }
-        return <p>Better luck next time.</p>
+        return <p css={textStyle}>Better luck next time.</p>
+    }
+
+    const textStyle = {
+        fontSize: '3rem',
     }
 
     const buttonStyle = {
-        padding: `0 1rem`,
+        fontSize: '3rem',
+        padding: `0 2rem`,
+        margin: `3rem 0`,
         background: `#ceebe6`,
-        border: `0.25rem solid rgb(58 172 190)`,
-        borderRadius: `1rem`
+        border: `1rem solid rgb(58 172 190)`,
+        borderRadius: `1rem`,
+        boxShadow: '0px 10px 20px 5px #000',
+        transform: 'translateY(-5px)',
+
+        '&:hover': {
+            boxShadow: 'none',
+            transform: 'translateY(0px)',
+            cursor: 'pointer',
+        }
     }
 
     return (
-        <div className="controls">
+        <div>
             { !visibility && <Searchbar /> }
             { visibility && displayMessage() }
 

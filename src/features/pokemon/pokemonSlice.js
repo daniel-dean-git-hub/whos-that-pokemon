@@ -3,6 +3,7 @@ import { fetchPokemonDetails } from './pokemonAPI'
 
 const initialState = {
     details: {},
+    userGuess: '',
     isVisible: false,
     isLoading: true,
     hasError: false,
@@ -10,7 +11,8 @@ const initialState = {
 
 export const getPokemon = createAsyncThunk(
     'pokemon/getPokemon',
-    async (id = 0) => {
+    async (id = 0, { dispatch }) => {
+        await dispatch(newGame())
         const response = await fetchPokemonDetails(id) 
         return response
     }
@@ -20,12 +22,22 @@ export const pokemonSlice = createSlice({
     name: 'pokemon',
     initialState,
     reducers: {
+        newGame: (state) => {
+            state.details = {};
+            state.userGuess = '';
+        },
         correctGuess: (state) => {
             state.isVisible = true;
         },
         giveUp: (state) => {
             state.isVisible = true;
         },
+        imageLoaded: (state) => {
+            state.isLoading = false;
+        },
+        updateGuess: (state, action) => {
+            state.userGuess = action.payload
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -36,7 +48,6 @@ export const pokemonSlice = createSlice({
         .addCase(getPokemon.fulfilled, (state, action) => {
             state.details = action.payload
             state.isVisible = false
-            state.isLoading = false
             state.hasError = false
         })
         .addCase(getPokemon.rejected, (state) => {
@@ -47,10 +58,11 @@ export const pokemonSlice = createSlice({
 })
 
 
-export const { correctGuess, giveUp } = pokemonSlice.actions
+export const { newGame, correctGuess, updateGuess, giveUp, imageLoaded } = pokemonSlice.actions
 
 export const selectPokemon = state => state.pokemon.details
 export const selectLoading = state => state.pokemon.isLoading
 export const selectVisibility = state => state.pokemon.isVisible
+export const selectUserGuess = state => state.pokemon.userGuess
 
 export default pokemonSlice.reducer

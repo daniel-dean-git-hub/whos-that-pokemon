@@ -1,11 +1,27 @@
+.pokemon-container {
+  // position: absolute;
+  max-height: 475px;
+  max-width: 475px;
+  height: auto;
+  margin: 0 auto;
+  // top:50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+}
+
 img {
-    width: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .loading {
-    max-width: 475px;
-    max-height: 475px;
-    animation: loading-rotate infinite 2s;
+  height: 100%;
+  animation: loading-rotate infinite 2s;
+}
+
+.img-loading {
+  display: none;
+  visibility: hidden;
 }
 
 .hidden {

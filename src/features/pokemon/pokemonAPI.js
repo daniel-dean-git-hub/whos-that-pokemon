@@ -1,8 +1,5 @@
 export const fetchPokemonDetails = async (currentId) => {
     //const newNumber = Math.floor(Math.random()*898)
-    console.log('called')
-
-
     const newNumber = Math.floor(Math.random()*151)
 
 
@@ -11,7 +8,12 @@ export const fetchPokemonDetails = async (currentId) => {
     while (newID === currentId) {
         newID = newNumber
     }
+
+    const test = await fetch(`https://pokeapi.co/api/v2/pokemon/${newID}`)
+    .then(response => response.json())
     
-    return await fetch(`https://pokeapi.co/api/v2/pokemon/${newID}`)
-      .then(response => response.json())
+    console.log(test)
+
+    return test
+
 }

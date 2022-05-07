@@ -13,6 +13,7 @@ const Searchbar = () => {
     const checkGuess = (e) => dispatch(updateGuess(e.target.value))
 
     useEffect(() => {
+        if (userGuess === undefined || name === undefined) { return }
         if (userGuess.toLowerCase() === name.toLowerCase()) {
             dispatch(correctGuess())
         }

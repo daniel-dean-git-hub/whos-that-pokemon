@@ -3,10 +3,9 @@ import Nameplate from './features/nameplate/Nameplate';
 import PokemonContainer from './features/pokemon/PokemonContainer';
 import GameControls from './features/gameControls/GameControls';
 import './App.scss';
-import bg from './assets/images/explosion.svg'
 
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+// import { css } from "@emotion/react";
 
 function App() {
   const toggleDisplay = e => {
@@ -18,12 +17,12 @@ function App() {
         <Nameplate />
         <div css={{
           background: '#ceebe6',
-          border: '1rem solid rgb(58 172 190)',
+          border: '2vw solid rgb(58 172 190)',
           margin: 'auto',
           maxWidth: 1200,
           padding: '1rem',
           borderRadius: '5rem',
-          boxShadow: '0px 0px 25px 25px rgb(58 172 190), inset 0px 0px 25px 25px rgb(58 172 190)',
+          // boxShadow: '0px 0px 25px 25px rgb(58 172 190), inset 0px 0px 25px 25px rgb(58 172 190)',
         }}>
           <PokemonContainer toggleDisplay={toggleDisplay}/>
         </div>

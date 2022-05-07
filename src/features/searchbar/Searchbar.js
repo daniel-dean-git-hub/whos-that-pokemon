@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+/** @jsxImportSource @emotion/react */
+// import { css } from "@emotion/react";
 
 import { useDispatch, useSelector } from 'react-redux'
 import { correctGuess, selectPokemon, updateGuess, selectUserGuess } from '../pokemon/pokemonSlice'
-
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 
 const Searchbar = () => {
     const dispatch = useDispatch()   
@@ -32,6 +31,7 @@ const Searchbar = () => {
             fontSize: '.5rem',
             padding: '0px 50px'
         }}
+        placeholder={'Type guess here...'}
     />
   )
 }

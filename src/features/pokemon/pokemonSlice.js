@@ -7,6 +7,8 @@ const initialState = {
     isVisible: false,
     isLoading: true,
     hasError: false,
+    correct: false,
+    score: 0
 }
 
 export const getPokemon = createAsyncThunk(
@@ -28,9 +30,12 @@ export const pokemonSlice = createSlice({
         },
         correctGuess: (state) => {
             state.isVisible = true;
+            state.correct = true;
+            state.score += 1;
         },
         giveUp: (state) => {
             state.isVisible = true;
+            state.correct = false;
         },
         imageLoaded: (state) => {
             state.isLoading = false;
@@ -64,5 +69,7 @@ export const selectPokemon = state => state.pokemon.details
 export const selectLoading = state => state.pokemon.isLoading
 export const selectVisibility = state => state.pokemon.isVisible
 export const selectUserGuess = state => state.pokemon.userGuess
+export const selectCorrectState = state => state.pokemon.correct
+export const selectScore = state => state.pokemon.score
 
 export default pokemonSlice.reducer

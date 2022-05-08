@@ -24,7 +24,7 @@ const PokemonContainer = () => {
 
     return (
         <div className="pokemon-container">
-            { loading && <div height={475} width={475} className='loading' src={pokeball} alt='loading' /> } 
+            { loading && <img height={475} width={475} className='loading' draggable={false} src={pokeball} alt='loading' /> } 
             { Object.keys(pokemon).length !== 0 && <Pokemon styleClasses={styleClasses} pokemonDetails={pokemon} changeLoadState={loaded}/>}
         </div>
     )

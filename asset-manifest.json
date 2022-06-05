@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/whos-that-pokemon/static/css/main.b2735248.css",
+    "main.js": "/whos-that-pokemon/static/js/main.58573c02.js",
+    "static/js/787.6552780e.chunk.js": "/whos-that-pokemon/static/js/787.6552780e.chunk.js",
+    "static/media/pokeball.png": "/whos-that-pokemon/static/media/pokeball.32d7036b771b4f36ba0b.png",
+    "index.html": "/whos-that-pokemon/index.html",
+    "main.b2735248.css.map": "/whos-that-pokemon/static/css/main.b2735248.css.map",
+    "main.58573c02.js.map": "/whos-that-pokemon/static/js/main.58573c02.js.map",
+    "787.6552780e.chunk.js.map": "/whos-that-pokemon/static/js/787.6552780e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2735248.css",
+    "static/js/main.58573c02.js"
+  ]
+}

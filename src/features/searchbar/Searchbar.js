@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 /** @jsxImportSource @emotion/react */
 // import { css } from "@emotion/react";
 
@@ -12,15 +12,19 @@ const Searchbar = () => {
 
     const checkGuess = (e) => dispatch(updateGuess(e.target.value))
 
+    const focusSearch = useRef();
     useEffect(() => {
+        if (focusSearch.current) focusSearch.current.focus(); 
         if (userGuess === undefined || name === undefined) { return }
         if (userGuess.toLowerCase() === name.toLowerCase()) {
             dispatch(correctGuess())
         }
     }, [userGuess, dispatch, name])
 
+
     return (
     <input 
+        ref={focusSearch}
         id="searchbar" 
         type="text" 
         onChange={checkGuess} 

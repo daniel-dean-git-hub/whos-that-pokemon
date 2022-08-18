@@ -1,16 +1,19 @@
-.pokemon-container {
-  max-height: 475px;
-  max-width: 475px;
-  display: flex;
-  height: 100vw;
-  width: 100vw;
-}
+// .pokemon-container {
+//   max-height: 475px;
+//   max-width: 475px;
+//   display: flex;
+//   height: 100vw;
+//   width: 100vw;
+// }
 
-.pokemon-img {
+
+.pokemon {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  height: auto;
   width: 100%;
+  max-width: 300px;
+  color: hsl(188, 53%, 49%);
 }
 
 .loading {
@@ -20,8 +23,8 @@
   // background-size: cover;
   // max-height: 475px;
   // max-width: 475px;
-  height: auto;
-  max-width: 100%;
+  // height: auto;
+  // max-width: 100%;
 }
 
 .img-loading {

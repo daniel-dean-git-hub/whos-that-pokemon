@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { giveUp, getPokemon, selectVisibility, selectCorrectState, selectScore } from '../pokemon/pokemonSlice'
 import Searchbar from '../searchbar/Searchbar';
@@ -20,6 +20,7 @@ const GameControls = () => {
             )
         }
         return <p css={textStyle}>Better luck next time.</p>
+
     }
 
     const textStyle = {
@@ -43,6 +44,12 @@ const GameControls = () => {
         }
     }
 
+    const focusButton = useRef();
+    useEffect(() => {
+        if (focusButton.current) focusButton.current.focus(); 
+    });
+
+
     return (
         <div>
             { !visibility && <Searchbar /> }
@@ -51,7 +58,7 @@ const GameControls = () => {
             <div>
                 { 
                     visibility 
-                        ? <button css={buttonStyle} onClick={newPokemon} >New Pokemon</button>
+                        ? <button ref={focusButton} css={buttonStyle} onClick={newPokemon} >New Pokemon</button>
                         : <button css={buttonStyle} onClick={revealPokemon} >Give Up?</button>
                 }
             </div>

@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getPokemon, selectPokemon, selectLoading, selectVisibility, imageLoaded } from './pokemonSlice'
 import pokeball from '../../assets/images/pokeball.png'
 
+/** @jsxImportSource @emotion/react */
+// import { css } from "@emotion/react";
+
 import Pokemon from './Pokemon'
 
 const PokemonContainer = () => {
@@ -23,10 +26,20 @@ const PokemonContainer = () => {
     const styleClasses = `${loadingClass} ${pokemonVisibility}`
 
     return (
-        <div className="pokemon-container">
-            { loading && <img height={475} width={475} className='loading' draggable={false} src={pokeball} alt='loading' /> } 
-            { Object.keys(pokemon).length !== 0 && <Pokemon styleClasses={styleClasses} pokemonDetails={pokemon} changeLoadState={loaded}/>}
-        </div>
+        <div css={{
+            display: 'flex',
+            background: '#ceebe6',
+            border: '2rem solid hsl(188, 53%, 49%)', //
+            margin: 'auto',
+            maxWidth: 1200,
+            padding: '3rem',
+            borderRadius: '50%',
+          }}>
+            {/* <div className="pokemon-container"> */}
+                { loading && <img className='pokemon loading' draggable={false} src={pokeball} alt='loading' /> } 
+                { Object.keys(pokemon).length !== 0 && <Pokemon styleClasses={styleClasses} pokemonDetails={pokemon} changeLoadState={loaded}/>}
+            {/* </div> */}
+          </div>
     )
 }
 

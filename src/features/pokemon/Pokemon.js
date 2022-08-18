@@ -5,7 +5,7 @@ const Pokemon = ({pokemonDetails, changeLoadState, styleClasses}) => {
     return (
         <img   
             draggable={false}
-            className={styleClasses} 
+            className={`pokemon ${styleClasses}`} 
             src={pokemonDetails.sprites.other['official-artwork'].front_default} 
             alt={pokemonDetails.name}
             onLoad={changeLoadState}

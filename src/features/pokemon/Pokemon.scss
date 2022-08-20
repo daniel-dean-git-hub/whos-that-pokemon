@@ -1,30 +1,24 @@
-// .pokemon-container {
-//   max-height: 475px;
-//   max-width: 475px;
-//   display: flex;
-//   height: 100vw;
-//   width: 100vw;
-// }
-
+.pokemon-container {
+  display: flex;
+  margin: auto;
+  background: #ceebe6;
+  border: 2rem solid hsl(188, 53%, 49%);
+  padding: 3rem;
+  border-radius: 50%;
+}
 
 .pokemon {
   background-repeat: no-repeat;
   background-size: cover;
-  height: auto;
-  width: 100%;
-  max-width: 300px;
+  max-height: 475px;
+  max-width: 475px;
   color: hsl(188, 53%, 49%);
+  height: auto;
+  max-width: 100%;
 }
 
 .loading {
   animation: loading-rotate infinite 2s;
-  //background: url('../../assets/images/pokeball.png');
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // max-height: 475px;
-  // max-width: 475px;
-  // height: auto;
-  // max-width: 100%;
 }
 
 .img-loading {

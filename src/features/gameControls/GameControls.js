@@ -26,8 +26,7 @@ const GameControls = () => {
 
     return (
         <>
-            { !visibility && <Searchbar /> }
-            { visibility && displayMessage() }
+            { visibility ? displayMessage() : <Searchbar /> }
             { visibility 
                 ? <button ref={focusButton} className="controls" onClick={newPokemon} >New Pokemon</button>
                 : <button className="controls" onClick={revealPokemon} >Give Up?</button>

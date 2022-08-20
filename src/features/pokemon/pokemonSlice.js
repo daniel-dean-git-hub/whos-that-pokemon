@@ -71,5 +71,6 @@ export const selectVisibility = state => state.pokemon.isVisible
 export const selectUserGuess = state => state.pokemon.userGuess
 export const selectCorrectState = state => state.pokemon.correct
 export const selectScore = state => state.pokemon.score
+export const selectError = state => state.pokemon.hasError
 
 export default pokemonSlice.reducer

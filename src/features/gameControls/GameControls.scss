@@ -1,3 +1,29 @@
+p {
+    font-size: 3rem;
+}
+
 .controls {
-    padding: 2rem 0;
+    font-size: 2rem;
+    padding: 0 2rem;
+    background: #ceebe6;
+    border: 1rem solid rgb(58 172 190);
+    border-radius: 1rem;
+    box-shadow: 0px 10px 20px 5px #000;
+    transform: translateY(-5px);
+    max-width: 98%;
+    width: 100%;
+
+    &:hover {
+        box-shadow: none;
+        transform: translateY(0px);
+        cursor: pointer;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .controls { 
+        max-width: 300px;
+        padding: 0 25px;
+    }
 }

@@ -1,0 +1,16 @@
+#searchbar {
+    border-radius: 1rem;
+    text-align: center;
+    width: 98vw;
+    font-size: 1.5rem;
+    padding: 0 10px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+@media (min-width: 768px) {
+    #searchbar { 
+        width: 60vw;
+        padding: 0 50px;
+    }
+}

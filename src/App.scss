@@ -24,9 +24,8 @@
   text-align: center;
   display: grid;
   flex-wrap: wrap;
-  align-content: center;
-  gap: 2rem;
-  height: 100vh;
+  justify-items: center;
+  align-content: space-around;
 }
 
 .App-logo {

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-/** @jsxImportSource @emotion/react */
-// import { css } from "@emotion/react";
+import './Searchbar.scss'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { correctGuess, selectPokemon, updateGuess, selectUserGuess } from '../pokemon/pokemonSlice'
@@ -21,7 +20,6 @@ const Searchbar = () => {
         }
     }, [userGuess, dispatch, name])
 
-
     return (
     <input 
         ref={focusSearch}
@@ -29,13 +27,6 @@ const Searchbar = () => {
         type="text" 
         onChange={checkGuess} 
         value={userGuess}
-        css={{
-            borderRadius: `1rem`,
-            textAlign: 'center',
-            width: '60vw',
-            fontSize: '2rem',
-            padding: '0px 50px'
-        }}
         placeholder={'Type guess here...'}
     />
   )

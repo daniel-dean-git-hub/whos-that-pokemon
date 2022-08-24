@@ -1,0 +1,22 @@
+svg {
+    filter: drop-shadow(3px 3px 0px #193367);
+}
+
+
+.settings-container {    
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+    z-index: 200;
+}
+
+.settings-menu {
+    min-height: 100vh;
+    z-index: 100;
+    position: absolute;
+    background-color: #db1513;
+    width: 100%;
+}

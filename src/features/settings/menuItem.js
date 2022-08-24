@@ -6,11 +6,14 @@ const MenuItem = ({label, range}) => {
     const dispatch = useDispatch()
     const gens = useSelector(selectGen)
         
-    const genEnabled = gens.find(element => element.id === label.replace(' ',''))
-
     console.log(gens)
+    
+    const genEnabled = Object.values(gens).find(([key,value]) => { 
+        console.log(key)
+        console.log(value)
+    }) //element.id === label.replace(' ',''))
 
-    //console.log(genEnabled)
+    console.log(genEnabled)
 
 
     return (

@@ -11,10 +11,10 @@ export const settingsSlice = createSlice({
     initialState,
     reducers: {
         addGen: (state, {payload}) => {
-            state.gen[payload.id] = payload.range
+            state.gen[payload.key] = payload.range
         },
         removeGen: (state, {payload}) => {
-            state.gen[payload.id] = []
+            delete state.gen[payload]
         }
     }
 })
@@ -22,6 +22,7 @@ export const settingsSlice = createSlice({
 
 export const { addGen, removeGen } = settingsSlice.actions
 
-export const selectGen = state => state.settings.gen
+export const selectGen = (state, key) => state.settings.gen[key] ? true : false 
+export const selectAll = (state) => Object.values(state.settings.gen)
 
 export default settingsSlice.reducer

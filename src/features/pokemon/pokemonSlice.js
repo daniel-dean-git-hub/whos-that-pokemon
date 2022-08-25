@@ -13,9 +13,11 @@ const initialState = {
 
 export const getPokemon = createAsyncThunk(
     'pokemon/getPokemon',
-    async (id = 0, { dispatch }) => {
-        await dispatch(newGame())
-        const response = await fetchPokemonDetails(id) 
+    async (payload , { dispatch }) => {
+        const id = payload?.id 
+        const genList = payload?.genList
+        await dispatch(newGame())        
+        const response = await fetchPokemonDetails(id, genList) 
         return response
     }
 )
@@ -66,6 +68,7 @@ export const pokemonSlice = createSlice({
 export const { newGame, correctGuess, updateGuess, giveUp, imageLoaded } = pokemonSlice.actions
 
 export const selectPokemon = state => state.pokemon.details
+export const selectId = state => state.pokemon.details.id
 export const selectLoading = state => state.pokemon.isLoading
 export const selectVisibility = state => state.pokemon.isVisible
 export const selectUserGuess = state => state.pokemon.userGuess

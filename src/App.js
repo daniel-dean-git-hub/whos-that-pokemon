@@ -11,8 +11,6 @@ function App() {
   const toggleDisplay = e => e.target.classList.toggle('hidden')
   const serverStatus = useSelector(selectError)
 
-  console.log(serverStatus)
-
   return (
     <div className="App">
       {!serverStatus 

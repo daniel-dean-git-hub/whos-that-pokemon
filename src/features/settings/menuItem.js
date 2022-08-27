@@ -11,17 +11,21 @@ const MenuItem = ({label}) => {
         if (label === "Toggle All") {
             return toggleAll ? dispatch(disableAll()) : dispatch(enableAll())
         }
-
-        genEnabled 
-            ? dispatch(disableGen(label))
-            : dispatch(enableGen(label))
+        return genEnabled ? dispatch(disableGen(label)) : dispatch(enableGen(label))
     }
 
     return (
         <div className="menu-item">
-            <label htmlFor={label}>{label}</label>
-            <input type="checkbox" id={label} name={label} onChange={toggleChecked} checked={label == "Toggle All" ? toggleAll : genEnabled}/>
-            <span className="slider"></span>
+            <div>{label}</div>
+            <div className="switch">
+                <input 
+                    type="checkbox" 
+                    id={label} 
+                    name={label} 
+                    onChange={toggleChecked} 
+                    checked={label === "Toggle All" ? toggleAll : genEnabled}/>
+                <label htmlFor={label}  className="slider"></label>
+            </div>
         </div>
     )
 }

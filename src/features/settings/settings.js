@@ -19,7 +19,7 @@ const Settings = () => {
             </div>
             {
                 menu && 
-                    <div className="settings-menu">
+                    <div className="settings-menu" height={window.innerHeight}>
                         <MenuItem label='Toggle All' />
                         { pokemonGens.map((value, key) => 
                             <MenuItem 

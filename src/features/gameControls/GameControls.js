@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { giveUp, getPokemon, selectId, selectVisibility, selectCorrectState, selectScore } from '../pokemon/pokemonSlice'
-import { selectAll } from '../settings/settingsSlice'
+import { selectEnabledGens } from '../settings/settingsSlice'
 import Searchbar from '../searchbar/Searchbar';
 import './GameControls.scss'
 
@@ -10,9 +10,8 @@ const GameControls = () => {
     const visibility = useSelector(selectVisibility)
     const guessCorrect = useSelector(selectCorrectState)
     const score = useSelector(selectScore)
-    const selectedGens = useSelector(selectAll)
+    const selectedGens = useSelector(selectEnabledGens)
     const currentId = useSelector(selectId)
-
     const revealPokemon = () => dispatch(giveUp())
     const newPokemon = () => dispatch(getPokemon({id: currentId, genList: selectedGens}))
 

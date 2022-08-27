@@ -4,6 +4,7 @@ p {
 
 .controls-container{
     min-height: 150px;
+    display: flex;
 }
 
 .controls {
@@ -13,13 +14,12 @@ p {
     border: 1rem solid rgb(58 172 190);
     border-radius: 1rem;
     box-shadow: 0px 10px 20px 5px #000;
-    transform: translateY(-5px);
     max-width: 98%;
     width: 100%;
 
     &:hover {
         box-shadow: none;
-        transform: translateY(0px);
+        transform: translateY(5px);
         cursor: pointer;
     }
 }
@@ -27,7 +27,7 @@ p {
 
 @media (min-width: 768px) {
     .controls { 
-        max-width: 300px;
+        max-width: 350px;
         padding: 0 25px;
     }
 }

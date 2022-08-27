@@ -1,20 +1,22 @@
 .pokemon-container {
   display: flex;
-  margin: auto;
+  align-items: center;
+  justify-content: center;
   background: #ceebe6;
   border: 2rem solid hsl(188, 53%, 49%);
   padding: 3rem;
   border-radius: 50%;
+
 }
 
 .pokemon {
   background-repeat: no-repeat;
   background-size: cover;
   max-height: 475px;
-  max-width: 475px;
-  color: hsl(188, 53%, 49%);
-  height: auto;
   max-width: 100%;
+  height: auto;
+  color: hsl(188deg, 53%, 49%);
+  aspect-ratio: 1/1;
 }
 
 .loading {

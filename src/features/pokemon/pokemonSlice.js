@@ -52,8 +52,12 @@ export const pokemonSlice = createSlice({
             state.isLoading = true
             state.hasError = false
         })
-        .addCase(getPokemon.fulfilled, (state, action) => {
-            state.details = action.payload
+        .addCase(getPokemon.fulfilled, (state, {payload}) => {
+            state.details = {
+                name: payload.name,
+                id: payload.id,
+                image: payload.sprites.other['official-artwork'].front_default
+            }
             state.isVisible = false
             state.hasError = false
         })

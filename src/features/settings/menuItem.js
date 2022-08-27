@@ -1,30 +1,27 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addGen, removeGen, selectGen } from '../settings/settingsSlice'
+import { enableGen, disableGen, selectGen, selectToggleAllState, enableAll, disableAll } from '../settings/settingsSlice'
 
-const MenuItem = ({label, range}) => {
+const MenuItem = ({label}) => {
     const dispatch = useDispatch()
+    const genEnabled = useSelector(state => selectGen(state,label))
+    const toggleAll = useSelector(selectToggleAllState)
+   
+    const toggleChecked = () => {
+        if (label === "Toggle All") {
+            return toggleAll ? dispatch(disableAll()) : dispatch(enableAll())
+        }
 
-    const key = label.replace(' ','')
-
-    //const genEnabled = useSelector(state => state.settings.gen[key])
-    
-    const genEnabled = useSelector(state => selectGen(state,key))
-    
-    // useEffect(() => {
-    //     console.log('test')
-    // }, [dispatch, genEnabled])
-
-    const test = () => {
         genEnabled 
-            ? dispatch(removeGen(key))
-            : dispatch(addGen({key, range}))
+            ? dispatch(disableGen(label))
+            : dispatch(enableGen(label))
     }
 
     return (
         <div className="menu-item">
             <label htmlFor={label}>{label}</label>
-            <input type="checkbox" id={label} name={label} onChange={test} checked={genEnabled}/>
+            <input type="checkbox" id={label} name={label} onChange={toggleChecked} checked={label == "Toggle All" ? toggleAll : genEnabled}/>
+            <span className="slider"></span>
         </div>
     )
 }

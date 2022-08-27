@@ -1,12 +1,14 @@
 import React from 'react'
 import './Pokemon.scss'
 
-const Pokemon = ({pokemonDetails, changeLoadState, styleClasses}) => {
+const Pokemon = ({pokemonDetails, changeLoadState, isLoading, pokemonVisibility}) => {
     return (
-        <img   
+        <img  
+            height='475'
+            width='475'
             draggable={false}
-            className={`pokemon ${styleClasses}`} 
-            src={pokemonDetails.sprites.other['official-artwork'].front_default} 
+            className={`pokemon ${isLoading} ${pokemonVisibility} `} 
+            src={pokemonDetails.image} 
             alt={pokemonDetails.name}
             onLoad={changeLoadState}
         />              

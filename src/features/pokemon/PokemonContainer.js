@@ -16,9 +16,8 @@ const PokemonContainer = () => {
     }, [dispatch])
     
     const loaded = () => dispatch(imageLoaded())
-    const loadingClass = pokemonLoading ? ' img-loading' : ''
+    const isLoading = pokemonLoading ? ' img-loading' : ''
     const pokemonVisibility = visibility ? '' : 'hidden' 
-    const styleClasses = `${loadingClass} ${pokemonVisibility}`
 
     return (
         <div className='pokemon-container'>
@@ -32,8 +31,15 @@ const PokemonContainer = () => {
                     src={pokeball} 
                     alt='loading'
                   />        
-                } 
-                { Object.keys(pokemon).length !== 0 && <Pokemon styleClasses={styleClasses} pokemonDetails={pokemon} changeLoadState={loaded}/>}
+                }    
+                { Object.keys(pokemon).length !== 0 && 
+                  <Pokemon 
+                    isLoading={isLoading} 
+                    pokemonVisibility={pokemonVisibility} 
+                    pokemonDetails={pokemon} 
+                    changeLoadState={loaded}
+                  />
+                }             
           </div>
     )
 }

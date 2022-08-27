@@ -1,4 +1,5 @@
-export const fetchPokemonDetails = async (currentId = 0, genList = [[1,151]]) => {      
+export const fetchPokemonDetails = async (currentId = 0, genList ) => {  
+    if (!genList || genList.length === 0) genList = [[1,151]];
 
     // generates a random number from provided range
     const randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;

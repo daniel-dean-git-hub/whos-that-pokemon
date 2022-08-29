@@ -1,6 +1,6 @@
 {
   "name": "whos-that-pokemon",
-  "homepage": "https://dandean191.github.io/whos-that-pokemon/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
